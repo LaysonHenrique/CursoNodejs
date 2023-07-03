@@ -1,2 +1,2 @@
-<h1 align="center"> Repositório do curso de Node </h1>
+<h2 align="center"> Repositório do curso de Node </h2>
 
