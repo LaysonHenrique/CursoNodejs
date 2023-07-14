@@ -67,4 +67,49 @@ function teste(nome, idade){
 }
 
 teste(nome, idade);
+
+******************************************************************************************************  
+default parameters
+permite que você inicialize um parametro com um valor padrão caso não seja passado nenhum valor.
+
+function soma(a = 1, b = 2){
+    console.log(a + b);
+}
+soma(); -> resultado sera 3
+soma (2, 5); -> resultado sera 7
+
+******************************************************************************************************
+closure
+é uma função dentro de outra função, onde a função interna tem acesso a variaveis da função externa.
+
+function somar (a){
+    let cont = a;
+    let somarContador = function(){
+        console.log(cont);
+        cont++;
+    }
+    return somarContador;
+}
+
+let meuContador = somar(1);
+
+meuContador(); - > resultado sera 1
+meuContador(); - > resultado sera 2
+
+******************************************************************************************************
+função recursiva
+é uma função que chama ela mesma.
+
+function somentePares (numero){
+    if(numero % 2 == 0){
+        console.log(`O numero ${numero} agora é par`);
+    }else{
+        console.log(` O numero ${numero} ainda é par`);
+        somentePares(numero + 1);
+
+    }
+}
+somentePares(1);
+
 */
+
