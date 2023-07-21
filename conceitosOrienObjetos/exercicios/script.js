@@ -134,9 +134,43 @@ class carro{
 
 
 ****************************************************************************************************
-EXERCICIO 5 - >
+EXERCICIO 5 - > CRIAR UMA CLASS CONTA BANCARIA, QUE CONTENHA O SALDO DA CONTA CORRENTE, POUPANÇA E JUROS DA POUPANÇA.
+MÉTODOS PARA SAQUE DEPOSITO, ALEM DO METODO PARA TRANSFERIR DINHEIRO DA CONTA CORRENTE PARA A POUPANÇA. CRIAR UMA CONTA ESPECIAL QUE HERDA DA CONTA NORMAL,
+OS JUROS DA CONTA ESPECIAL SÃO DOBRADOS DA NORMAL.
+
+class contBankPrincipal{
+    constructor(saldoCorrente, saldoPoupanca, jurosPoupanca){
+        this.saldoCorrente = saldoCorrente;
+        this.saldoPoupanca = saldoPoupanca;
+        this.jurosPoupanca = jurosPoupanca;
+    }
+    depositoCont(saldo){
+        this.saldoCorrente += saldo;
+    }
+    saqueCont(saldo){
+        this.saldoCorrente -= saldo;
+    }
+    transfPoupanca(transf){
+        this.saldoPoupanca -= transf;
+        this.saldoCorrente += transf;
+
+    }
+}
+
+class contBankEspecial extends contBankPrincipal{
+    constructor(saldoCorrente, saldoPoupanca, jurosPoupanca){
+        super(saldoCorrente, saldoPoupanca, jurosPoupanca);
+        this.jurosPoupanca = jurosPoupanca * 2;
+    }
+
+}
+
+let conta1 = new contBankEspecial(1000, 1000, 0.05);
+
+console.log(conta1);
+conta1.depositoCont(100);
+console.log(conta1);
 
 
 */
 
- 
