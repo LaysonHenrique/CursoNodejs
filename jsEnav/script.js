@@ -83,13 +83,57 @@ let pai = heading.parentNode;
 pai.replaceChild(novoElemento, heading);
 
 
+INSERINDO TEXTO EM ELEMENTOS HTML VIA DOM:
+
+let semTexto = document.getElementById("p-sem-texto");
+let texto = document.createTextNode("titulo teste 1");
+
+semTexto.appendChild(texto);
+
+ATUALIZANDO EM ELEMENTO EM HTML VIA DOM:
+
+getAttibute -> pega o elemento
+setAttribute -> altera o elemento
+
+let url = document.querySelector("footer a");
+
+url.setAttribute("href","https://www.google.com.br/");
+console.log(url.getAttribute("href"));
+
+--------------------------------------------------------------------------------------------------------------------------
+ATRIBUINDO ALTURA E LARGURA NOS ELEMENTOS
+
+let teste = document.querySelector("#conteiner-principal");
+console.log('largura' + teste.offsetWidth); //LARGURA
+
+console.log('altura' + teste.offsetHeight); //ALTURA
+
+--------------------------------------------------------------------------------------------------------------------------
+ENCONTRANDO AS POSIÇÕES NOS ELEMENTOS
+
+let teste = document.querySelector("#conteiner-principal");
+console.log(teste.getBoundingClientRect());
+
+--------------------------------------------------------------------------------------------------------------------------
+ALTERANDO O CSS COM DOM EM JS
+
+
+let teste = document.querySelector("#conteiner-principal h1");
+let teste2 = document.querySelector("#conteiner-principal p");
+teste.style.color = "red";
+teste2.style.color = "blue";
+
+
+--------------------------------------------------------------------------------------------------------------------------
+SELECIONANDO VARIOS ELEMENTOS PELA QUERYSELECTORALL
+
+
+
+
 */
 
-let novoElemento = document.createElement("h1");
-let texto = document.createTextNode("titulo teste");
-novoElemento.appendChild(texto);
+let itens = document.querySelectorAll(".itens-azuis");
 
-let heading = document.querySelector("#conteiner-principal");
-let pai = heading.parentNode;
+console.log(itens);
 
-pai.replaceChild(novoElemento, heading);
+
